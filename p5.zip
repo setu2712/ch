@@ -1,0 +1,57 @@
+using System;public class Pascal
+{
+public static void Main(string[] args)
+{
+Console.Write("Enter the number of rows for Pascal's Triangle: ");
+if (int.TryParse(Console.ReadLine(), out int numRows) && numRows > 0)
+{
+int[,] arr = new int[numRows, numRows];Console.WriteLine("Pascal Triangle : ");for (int i = 0; i <
+numRows; i++)
+{
+for (int j = 0; j <= i; j++)
+{
+if (j == 0 || j == i)
+{
+arr[i, j] = 1;
+}
+else
+{
+arr[i, j] = arr[i - 1, j] + arr[i - 1, j - 1];
+}Console.Write(arr[i, j] + " ");
+}Console.WriteLine();
+}
+}
+else
+{
+Console.WriteLine("Please enter a valid positive integer for the number of rows.");
+}Console.ReadLine();
+}
+}
+
+
+
+
+
+
+
+
+using System;class Program
+{
+static void Main()
+{
+Console.Write("Enter the number of rows for Pascal's Triangle: ");int numRows =
+int.Parse(Console.ReadLine());Console.Write("Pascal's
+Triangle:\n");PrintPascalsTriangle(numRows);}static void PrintPascalsTriangle(int numRows)
+{
+for (int i = 0; i < numRows; i++)
+{
+for (int j = 0; j < numRows - i - 1; j++)
+{
+Console.Write(" ");
+}for (int j = 0; j <= i; j++)
+{
+Console.Write("* ");
+}Console.WriteLine();
+}
+}
+}
